@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cinzel', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-outfit: 'Outfit', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #050507;
+    color: #ede8d0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-serif);
+    letter-spacing: 0.03em;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070709;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4af37, #8b6508);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f3e5ab;
+}
+
+/* Metallic Liquid Gold Utilities */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fff2be 0%, #e6c564 30%, #c59b27 70%, #9e7811 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-gold-bright {
+  background: linear-gradient(135deg, #ffffff 0%, #ffeaa7 40%, #e1b12c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-silver-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #d1d5db 50%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #e6c564 0%, #d4af37 45%, #aa771c 100%);
+  color: #050505;
+}
+
+.bg-gold-gradient-hover:hover {
+  background: linear-gradient(135deg, #fff2be 0%, #f1d779 50%, #c59b27 100%);
+}
+
+.bg-gold-subtle {
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.02) 100%);
+}
+
+/* Glass Panels with Gold Rims */
+.glass-panel {
+  background: rgba(10, 10, 14, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15), 0 0 20px rgba(212, 175, 55, 0.08);
+}
+
+.glass-card-burgundy {
+  background: linear-gradient(145deg, rgba(28, 8, 12, 0.6) 0%, rgba(10, 10, 15, 0.8) 100%);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-card-navy {
+  background: linear-gradient(145deg, rgba(8, 12, 24, 0.6) 0%, rgba(10, 10, 15, 0.8) 100%);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Gold glow and border accents */
+.border-gold-hairline {
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+.glow-gold-sm {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.glow-gold-lg {
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
+}
+
+/* Stage spotlight background overlay */
+.stage-spotlight-top {
+  background: radial-gradient(circle at 50% -20%, rgba(212, 175, 55, 0.18) 0%, rgba(42, 8, 15, 0.12) 40%, rgba(5, 5, 7, 0) 75%);
+}
+
+.stage-spotlight-center {
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.12) 0%, rgba(42, 8, 15, 0.08) 50%, rgba(5, 5, 7, 0) 80%);
+}
+
+/* Sub-headings, micro trackers */
+.tracking-cinematic {
+  letter-spacing: 0.28em;
+}
+
+/* Shimmer animation */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-shimmer-bar {
+  background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.6) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: goldShimmer 3s infinite linear;
+}
+
+/* Hide default cursor on desktop when custom cursor active */
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-active {
+    cursor: none;
+  }
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active input,
+  body.custom-cursor-active select,
+  body.custom-cursor-active textarea,
+  body.custom-cursor-active [role="button"] {
+    cursor: none;
+  }
+}
+
+@keyframes floatMobile {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.02);
+  }
+}
